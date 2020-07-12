@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "ignorePatterns": ["src/utils/serviceWorker.ts", "src/utils/setupTests.ts"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true,
+        "memberSyntaxSortOrder": ["single", "all", "multiple", "none"]
+      }
+    ]
+  }
+}
