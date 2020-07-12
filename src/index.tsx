@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { App } from 'pages/main';
+import { TypingPage } from 'pages/TypingPage';
 import * as serviceWorker from './utils/serviceWorker';
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TypingPage />
   </React.StrictMode>,
   document.getElementById('root'),
 );

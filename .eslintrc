@@ -20,6 +20,7 @@
         "ignoreDeclarationSort": true,
         "memberSyntaxSortOrder": ["single", "all", "multiple", "none"]
       }
-    ]
+    ],
+    "react/prop-types": "off"
   }
 }

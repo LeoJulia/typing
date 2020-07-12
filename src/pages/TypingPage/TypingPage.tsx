@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from 'assets/logo.svg';
-import { AppContainer, AppHeader, AppLink, AppLogo } from './App.style';
+import { AppContainer, AppHeader, AppLink, AppLogo } from './TypingPage.style';
 
-const App: () => JSX.Element = () => (
+const TypingPage: () => JSX.Element = () => (
   <AppContainer>
     <AppHeader>
       <AppLogo src={logo} alt='logo' />
@@ -20,4 +20,4 @@ const App: () => JSX.Element = () => (
   </AppContainer>
 );
 
-export { App };
+export { TypingPage };
