@@ -13,12 +13,19 @@
   },
   "ignorePatterns": ["src/utils/serviceWorker.ts", "src/utils/setupTests.ts"],
   "rules": {
+    "semi": ["error", "never"],
     "import/prefer-default-export": "off",
     "sort-imports": [
       "error",
       {
         "ignoreDeclarationSort": true,
         "memberSyntaxSortOrder": ["single", "all", "multiple", "none"]
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always"
       }
     ],
     "react/prop-types": "off"

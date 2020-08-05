@@ -1,1 +1,1 @@
-export * from './TypingPage';
+export * from './TypingPage'

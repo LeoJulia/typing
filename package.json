@@ -7,8 +7,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
+    "@types/node": "^12.12.53",
+    "@types/react": "^16.9.44",
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -22,7 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eslint:fix": "eslint --debug --ext .js,.jsx,.ts,.tsx ./ --fix",
-    "prettier": "prettier --write --ext .js,.jsx,.ts,.tsx ./"
+    "prettier:fix": "prettier --write --ext .js,.jsx,.ts,.tsx ./"
   },
   "husky": {
     "hooks": {
@@ -48,14 +48,14 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.1",
-    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@types/styled-components": "^5.1.2",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
     "eslint-config-airbnb-typescript": "^8.0.2",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.3",
-    "eslint-plugin-react-hooks": "^4.0.7",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
