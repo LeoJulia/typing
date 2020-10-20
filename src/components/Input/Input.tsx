@@ -1,13 +1,17 @@
 import React, { FunctionComponent, useState } from 'react'
 
+import {StyledInput} from './styles'
+
 interface InputProps {
   onInput?: (value: string) => void;
   val?: string;
+  isError?: boolean;
 }
 
 const Input: FunctionComponent<InputProps> = ({
   onInput = () => {},
   val = '',
+  isError,
 }) => {
   const [value, setValue] = useState(val)
 
@@ -16,7 +20,11 @@ const Input: FunctionComponent<InputProps> = ({
     setValue(target.value)
   }
 
-  return <input onInput={inputHandler} value={value} />
+  return <StyledInput 
+    onInput={inputHandler}
+    value={value}
+    isError={isError}
+  />
 }
 
 export { Input }

@@ -34,7 +34,7 @@ const TypingPage: FunctionComponent = () => {
     window.addEventListener('keypress', onTyping)
 
     return () => {
-        window.removeEventListener('keypress', onTyping)
+      window.removeEventListener('keypress', onTyping)
     }
   }, [activeText, text])
 
@@ -45,7 +45,7 @@ const TypingPage: FunctionComponent = () => {
         <ActiveText>{activeText}</ActiveText>
         {text}
       </div>
-      <Input />
+      <Input isError={status === 'error'}/>
       {status}
     </AppContainer>
   )
