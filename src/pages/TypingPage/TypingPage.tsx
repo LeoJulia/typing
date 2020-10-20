@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { Input } from 'components'
 
 import { ActiveText, AppContainer, DisabledText } from './TypingPage.style'
@@ -11,32 +11,22 @@ const TypingPage: FunctionComponent = () => {
   const [text, setText] = useState(textString.slice(1))
 
   const [status, setStatus] = useState('progress')
-  
-  useEffect(() => {
-    const onTyping: (e: KeyboardEvent) => void = ({ key }) => {
-      if (key === activeText) {
-        setStatus('progress')
-  
-        setDisabledText((prevText) => prevText + activeText)
-        setActiveText(text.length ? text.slice(0, 1) : '')
-        setText((prevText) => prevText.length ? prevText.slice(1) : '')
-      } 
-      
-      if (key !== activeText) {
-        setStatus('error')
-      }
-      
-      if (!text) {
-        setStatus('finish')
-      }
+
+  const inputHandler = (typedText) => {
+    if (disabledText + activeText === typedText) {
+      setDisabledText((prevText) => prevText + activeText)
+      setActiveText(text.length ? text.slice(0, 1) : '')
+      setText((prevText) => (prevText.length ? prevText.slice(1) : ''))
     }
 
-    window.addEventListener('keypress', onTyping)
-
-    return () => {
-        window.removeEventListener('keypress', onTyping)
+    if (disabledText + activeText !== typedText) {
+      setStatus('error')
     }
-  }, [activeText, text])
+
+    if (!text) {
+      setStatus('finish')
+    }
+  }
 
   return (
     <AppContainer>
@@ -45,8 +35,8 @@ const TypingPage: FunctionComponent = () => {
         <ActiveText>{activeText}</ActiveText>
         {text}
       </div>
-      <Input />
-      {status}
+      <Input onChange={inputHandler} isError={status === 'error'} />
+      <div>{`Status: ${status}`}</div>
     </AppContainer>
   )
 }

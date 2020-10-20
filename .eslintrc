@@ -1,12 +1,15 @@
 {
   "extends": [
+    "airbnb-typescript",
+    "airbnb/hooks",
     "prettier",
     "prettier/@typescript-eslint",
     "prettier/react",
-    "airbnb-typescript",
-    "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "plugins": [
+    "prettier"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
@@ -30,6 +33,7 @@
         "newlines-between": "always"
       }
     ],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "indent": ["error", 2]
   }
 }

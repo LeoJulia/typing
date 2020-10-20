@@ -1,22 +1,33 @@
 import React, { FunctionComponent, useState } from 'react'
 
+import { StyledInput } from './styles'
+
 interface InputProps {
-  onInput?: (value: string) => void;
-  val?: string;
+  onChange?: (value: string) => void
+  val?: string
+  isError?: boolean
 }
 
 const Input: FunctionComponent<InputProps> = ({
-  onInput = () => {},
+  onChange = () => {},
   val = '',
+  isError,
 }) => {
   const [value, setValue] = useState(val)
 
-  const inputHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    onInput(target.value)
-    setValue(target.value)
+  const changeHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
+    if (target.value === ' ') {
+      setValue('')
+    } else {
+      setValue(target.value)
+    }
+
+    onChange(target.value)
   }
 
-  return <input onInput={inputHandler} value={value} />
+  return (
+    <StyledInput onChange={changeHandler} value={value} isError={isError} />
+  )
 }
 
 export { Input }

@@ -12,4 +12,4 @@ const ActiveText = styled.span`
   color: blue;
 `
 
-export { ActiveText ,AppContainer, DisabledText }
+export { ActiveText, AppContainer, DisabledText }
