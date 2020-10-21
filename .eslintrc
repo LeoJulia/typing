@@ -1,19 +1,21 @@
 {
   "extends": [
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "ignorePatterns": ["src/utils/serviceWorker.ts", "src/utils/setupTests.ts"],
   "rules": {
-    "semi": ["error", "never"],
+    "prettier/prettier": "error",
+    "semi": "off",
+    "@typescript-eslint/semi": ["error", "never"],
     "import/prefer-default-export": "off",
     "sort-imports": [
       "error",
