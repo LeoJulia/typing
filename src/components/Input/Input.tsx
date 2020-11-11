@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react'
 
-import { StyledInput } from './styles'
+import { StyledInput } from './Input.styles'
 
 interface InputProps {
   onChange?: (value: string) => void
@@ -13,12 +13,10 @@ const Input: FunctionComponent<InputProps> = ({
   val = '',
   isError,
 }) => {
-  const [value, setValue] = useState(val)
+  const [value, setValue] = useState('')
 
   const changeHandler = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-    if (target.value === ' ') {
-      setValue('')
-    } else {
+    if (val) {
       setValue(target.value)
     }
 
@@ -26,7 +24,11 @@ const Input: FunctionComponent<InputProps> = ({
   }
 
   return (
-    <StyledInput onChange={changeHandler} value={value} isError={isError} />
+    <StyledInput
+      onChange={changeHandler}
+      value={val ?? value}
+      isError={isError}
+    />
   )
 }
 
