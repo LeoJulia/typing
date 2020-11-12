@@ -25,6 +25,7 @@
     "pages/*": ["src/pages/*"],
     "redux/*": ["src/redux/*"],
     "utils/*": ["src/utils/*"],
+    "styles/*": ["src/styles/*"],
   },
   "include": ["src"]
 }

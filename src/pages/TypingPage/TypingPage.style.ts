@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-const AppContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`
 const TypingForm = styled.div`
   padding: 10px;
   width: 30vw;
@@ -27,4 +21,4 @@ const ActiveText = styled.span`
   color: blue;
 `
 
-export { ActiveText, AppContainer, DisabledText, TypingForm }
+export { ActiveText, DisabledText, TypingForm }

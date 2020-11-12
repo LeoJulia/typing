@@ -3,12 +3,7 @@ import { useSelector } from 'react-redux'
 import { Input } from 'components'
 import { getText } from 'redux/selectors'
 
-import {
-  ActiveText,
-  AppContainer,
-  DisabledText,
-  TypingForm,
-} from './TypingPage.style'
+import { ActiveText, DisabledText, TypingForm } from './TypingPage.style'
 
 const punctuationRegEx = /[.!?\s]/
 
@@ -48,21 +43,15 @@ const TypingPage: FunctionComponent = () => {
   }
 
   return (
-    <AppContainer>
-      <TypingForm>
-        <div>
-          <DisabledText>{disabledText}</DisabledText>
-          <ActiveText>{activeText}</ActiveText>
-          {text}
-        </div>
-        <Input
-          val={value}
-          onChange={inputHandler}
-          isError={status === 'error'}
-        />
-        <div>{`Status: ${status}`}</div>
-      </TypingForm>
-    </AppContainer>
+    <TypingForm>
+      <div>
+        <DisabledText>{disabledText}</DisabledText>
+        <ActiveText>{activeText}</ActiveText>
+        {text}
+      </div>
+      <Input val={value} onChange={inputHandler} isError={status === 'error'} />
+      <div>{`Status: ${status}`}</div>
+    </TypingForm>
   )
 }
 
