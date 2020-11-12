@@ -17,8 +17,12 @@
   "ignorePatterns": ["src/utils/serviceWorker.ts", "src/utils/setupTests.ts"],
   "rules": {
     "prettier/prettier": "error",
-    "semi": "off",
+
     "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+
+    "semi": "off",
     "import/prefer-default-export": "off",
     "sort-imports": [
       "error",

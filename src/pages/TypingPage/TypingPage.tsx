@@ -1,5 +1,7 @@
 import React, { FunctionComponent, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Input } from 'components'
+import { getText } from 'redux/selectors'
 
 import {
   ActiveText,
@@ -8,11 +10,11 @@ import {
   TypingForm,
 } from './TypingPage.style'
 
-const textString = 'Text text text'
-
 const punctuationRegEx = /[.!?\s]/
 
 const TypingPage: FunctionComponent = () => {
+  const textString: string = useSelector(getText)
+
   const [disabledText, setDisabledText] = useState('')
   const [activeText, setActiveText] = useState(textString[0])
   const [text, setText] = useState(textString.slice(1))
