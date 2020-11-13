@@ -1,7 +1,16 @@
 import React, { FunctionComponent } from 'react'
+import { Button } from 'components'
+import { useHistory } from 'react-router-dom'
 
 const HomePage: FunctionComponent = () => {
-  return <div>Home</div>
+  const history = useHistory()
+
+  return (
+    <>
+      <div>Home</div>
+      <Button text='Start' onClick={() => history.push('/typing')} />
+    </>
+  )
 }
 
 export { HomePage }
