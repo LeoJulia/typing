@@ -2,6 +2,7 @@ import React, { FunctionComponent, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Input } from 'components'
 import { getText } from 'redux/selectors'
+import { AlignCenterFullPage } from 'components/AlignCenter.styles'
 
 import { ActiveText, DisabledText, TypingForm } from './TypingPage.style'
 
@@ -43,15 +44,21 @@ const TypingPage: FunctionComponent = () => {
   }
 
   return (
-    <TypingForm>
-      <div>
-        <DisabledText>{disabledText}</DisabledText>
-        <ActiveText>{activeText}</ActiveText>
-        {text}
-      </div>
-      <Input val={value} onChange={inputHandler} isError={status === 'error'} />
-      <div>{`Status: ${status}`}</div>
-    </TypingForm>
+    <AlignCenterFullPage>
+      <TypingForm>
+        <div>
+          <DisabledText>{disabledText}</DisabledText>
+          <ActiveText>{activeText}</ActiveText>
+          {text}
+        </div>
+        <Input
+          val={value}
+          onChange={inputHandler}
+          isError={status === 'error'}
+        />
+        <div>{`Status: ${status}`}</div>
+      </TypingForm>
+    </AlignCenterFullPage>
   )
 }
 

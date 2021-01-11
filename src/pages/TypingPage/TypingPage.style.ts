@@ -19,6 +19,7 @@ const DisabledText = styled.span`
 
 const ActiveText = styled.span`
   color: blue;
+  text-decoration: underline;
 `
 
 export { ActiveText, DisabledText, TypingForm }
